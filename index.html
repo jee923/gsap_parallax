@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paralax Effect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper" id="luxy">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="title" data-splitting>
+          <span class="title_paralax">Parallax Effect</span><br />
+          <span class="stroke">on gasp</span>
+        </h1>
+        <div class="header__img">
+          <img src="img/1.jpg" alt="1" />
+        </div>
+
+        <div class="header__marq">
+          <div class="header__marq-wrapper">
+            <span class="header__marq-txt"
+              >You Are Not Alone
+              <span class="header__marq-star">
+                <img src="img/star.svg" alt="" />
+              </span>
+            </span>
+            <span class="header__marq-txt"
+              >You Are Not Alone
+              <span class="header__marq-star">
+                <img src="img/star.svg" alt="" />
+              </span>
+            </span>
+            <span class="header__marq-txt"
+              >You Are Not Alone
+              <span class="header__marq-star">
+                <img src="img/star.svg" alt="" />
+              </span>
+            </span>
+            <span class="header__marq-txt"
+              >You Are Not Alone
+              <span class="header__marq-star">
+                <img src="img/star.svg" alt="" />
+              </span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Wrapper -->
+      <main class="main">
+        <!-- About Section -->
+        <section class="about">
+          <div class="about__wrapper">
+            <div class="about_img">
+              <img src="img/2.jpg" alt="" />
+            </div>
+            <div class="about_txt">
+              <h2 class="section_title">
+                abo<span class="stroke">ut</span>
+                <span class="section_title_square"></span>
+              </h2>
+              <div class="about_p">
+                Officia adipisicing consequat qui proident veniam ex esse
+                deserunt veniam irure. Veniam elit aliqua qui culpa. Sit dolore
+                pariatur culpa dolore labore labore exercitation ad elit. Quis
+                in sunt exercitation sit nulla. Reprehenderit voluptate esse
+                eiusmod irure incididunt velit minim esse. Irure sit duis amet
+                dolore eu voluptate dolore ut sunt anim et ea.
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Hollow -->
+      <div class="hollow"></div>
+    </div>
+
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+
+    <!-- Splitting Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js"></script>
+
+    <!-- Luxy Plugin -->
+    <script src="js/luxy.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

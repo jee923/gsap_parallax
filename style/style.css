@@ -1,0 +1,228 @@
+/* general-setting-pages */
+:root {
+  --pr-color: #fff;
+  --second-color: #0a0a0a;
+  --cubicbz: cubic-bezier(0.9, 0, 0.1, 1);
+  --fz-big: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+body {
+  background: var(--second-color);
+}
+
+/* Contents Style */
+section {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.char {
+  display: inline-block;
+}
+
+/* Header Style */
+.header {
+  position: relative;
+  display: flex;
+  padding: 0 70px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  position: relative;
+  font-size: 85px;
+  /* font-size:40px; */
+  margin: 0;
+  text-align: center;
+  color: var(--pr-color);
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.title_paralax {
+  display: inline-block;
+  will-change: transform;
+}
+
+.title .stroke {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pr-color);
+}
+
+/* Hero Page Image */
+.header__img {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  top: 0;
+  right: 100px;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+   */
+  /* clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); */
+  clip-path: circle(0% at 0 100%);
+  overflow: hidden;
+} /*
+ https://bennettfeely.com/clippy/
+ 첫 번째 점 (0% 0%)는 왼쪽 상단 모서리를 나타냅니다.
+ 두 번째 점 (100% 0%)는 또한 오른쪽 상단 모서리를 나타냅니다.
+ 세 번째 점 (100% 100%)는 왼쪽 하단 모서리를 나타냅니다.
+ 네 번째 점 (0% 100%)는 또한 오른쪽 하단 모서리를 나타냅니다.
+ */
+
+.header__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero Bottom Text */
+.header__marq {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background: #171717;
+  overflow: hidden;
+}
+
+.header__marq-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 8px 70px;
+}
+
+.header__marq-txt {
+  display: inline-block;
+  font-size: 35px;
+  position: relative;
+  color: #9e9e9e;
+  padding-right: 55px;
+  margin-right: 15px;
+  flex: 0 0 auto;
+  /* flex-grow, flex-shrink, flex-basis 세 가지 속성을 한 번에 설정합니다. */
+
+  /*
+  flex-grow: 이 속성은 flex 컨테이너 내의 여유 공간을 어떻게 분배할지 결정합니다. 0은 이 요소가 여유 공간을 확장하지 않음을 의미합니다.
+  - flex-shrink: 이 속성은 flex 컨테이너가 너무 작아서 모든 항목이 기본 크기를 유지할 수 없을 때, 항목이 줄어드는 방법을 결정합니다. 0은 이 요소가 줄어들지 않음을 의미합니다.
+  - flex-basis: 이 속성은 flex 항목의 초기 크기를 결정합니다. auto는 원래의 크기를 기반으로 합니다.
+ 
+ 
+  - 따라서 flex: 0 0 auto;는 "이 요소는 여유 공간을 확장하거나 줄어들지 않으며, 초기 크기는 원래의 크기를 기반으로 한다"는 의미입니다.
+ 
+ 
+  - 참조 : https://choar816.tistory.com/119
+  */
+  text-transform: uppercase;
+}
+
+.header__marq-star {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+}
+
+.header__marq-star img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* About Section Style */
+.about {
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_img,
+.about_txt {
+  width: calc(50% - 35px);
+  height: auto;
+}
+
+.about_img {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.about_txt {
+  padding-top: 4.375rem;
+}
+
+.about_p {
+  line-height: 1.4;
+  font-size: 1.25rem;
+  color: #4b4b4b;
+}
+
+.about_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section_title {
+  position: relative;
+  font-size: 4.375rem;
+  line-height: 0.8;
+  margin-bottom: 3.75rem;
+  text-align: center;
+  color: var(--pr-color);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.section_title .stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pr-color);
+}
+
+.section_title_square {
+  position: absolute;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border: 1px solid #4b4b4b;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+/* Hollow */
+
+.hollow {
+  width: 100%;
+  height: 100vh;
+  background: #ff8833;
+}
