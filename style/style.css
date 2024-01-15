@@ -196,7 +196,7 @@ section {
   font-size: 4.375rem;
   line-height: 0.8;
   margin-bottom: 3.75rem;
-  text-align: center;
+  _text-align: center;
   color: var(--pr-color);
   text-transform: uppercase;
   text-align: left;
@@ -217,6 +217,36 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9;
+}
+
+/* Benefits Section Style */
+.benefits .section_title {
+  text-align: center;
+}
+
+.benefits .benefits_list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.benefits .benefits_item {
+  width: calc(33.33% - 27px);
+  padding: 0 40px;
+}
+
+.benefits_num {
+  font-size: 3.75rem;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pr-color);
+}
+
+.benefits_p {
+  font-size: 1.25rem;
+  color: #4b4b4b;
 }
 
 /* Hollow */

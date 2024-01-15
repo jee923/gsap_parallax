@@ -8,3 +8,7 @@
 
 - About Section Image Animation
 - About Section Text and Square Rotate Animation
+
+### Version 0.0.3 : 240115
+
+- Benefit Section UI and Animation
