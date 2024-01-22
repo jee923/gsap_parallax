@@ -158,14 +158,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Benefits Section Animation Effect
 function benefits() {
-  gsap.from(".benefits_num", {
-    x: (i, el) => 1 - parseFloat(el.getAttribute("data-speed")), // parseFloat: 소수점 제거
-    scrollTrigger: {
-      trigger: ".benefits_list",
+  // gsap.from(".benefits_num", {
+  //   x: (i, el) => 1 - parseFloat(el.getAttribute("data-speed")), // parseFloat: 소수점 제거
+  //   scrollTrigger: {
+  //     trigger: ".benefits_list",
+  //     start: "top bottom",
+  //     scrub: 1.9,
+  //   },
+  // });
+
+  const benefitsNum = gsap.utils.toArray(".benefits_num");
+  benefitsNum.forEach((num) => {
+    const xMove = gsap.from(num, 3, {
+      x: 1 - parseFloat(num.getAttribute("data-speed")),
+    });
+
+    ScrollTrigger.create({
+      trigger: num, // 애니메이션 대상
+      animation: xMove, // 애니메이션 효과
       start: "top bottom",
+      scrub: 1.9,
+    });
+  });
+}
+
+benefits();
+
+function worksAnimationWithScroll() {
+  const workAnimationElmts = gsap.utils.toArray(".work-item, .work-item-num");
+  workAnimationElmts.forEach((elmt) => {
+    const yMove = gsap.from(elmt, 3, {
+      y: 1 - parseFloat(elmt.getAttribute("data-speed")),
+    });
+
+    ScrollTrigger.create({
+      trigger: ".work", // 애니메이션 대상
+      animation: yMove, // 애니메이션 효과
+      start: "top bottom",
+      scrub: 1.9,
+    });
+  });
+
+  // image scale effect
+  gsap.from(".work-item-img img", {
+    scale: 1.6,
+    scrollTrigger: {
+      trigger: ".work",
+      start: "top center",
       scrub: 1.9,
     },
   });
 }
 
-benefits();
+worksAnimationWithScroll();
+
+function servAnimationWithScroll() {
+  const servAnimationElmts = gsap.utils.toArray(".serv-item-arrow");
+  servAnimationElmts.forEach((elmt) => {
+    const xMove = gsap.from(elmt, 3, {
+      x: 1 - parseFloat(elmt.getAttribute("data-speed")),
+    });
+
+    ScrollTrigger.create({
+      trigger: ".serv-list", // 애니메이션 대상
+      animation: xMove, // 애니메이션 효과
+      start: "top bottom",
+      scrub: 1.9,
+    });
+  });
+}
+
+servAnimationWithScroll();
+
+function footerAnimationWithScroll() {
+  const footerAnimationElmts = gsap.utils.toArray(".footer-wrapper span");
+  footerAnimationElmts.forEach((elmt) => {
+    const yMove = gsap.from(elmt, 3, {
+      y: 1 - parseFloat(elmt.getAttribute("data-speed")),
+    });
+
+    ScrollTrigger.create({
+      trigger: ".footer", // 애니메이션 대상
+      animation: yMove, // 애니메이션 효과
+      start: "top bottom",
+      end: "bottom bottom",
+      scrub: 1.9,
+    });
+  });
+}
+
+footerAnimationWithScroll();

@@ -12,3 +12,11 @@
 ### Version 0.0.3 : 240115
 
 - Benefit Section UI and Animation
+
+### Version 0.0.4 : 240117
+
+- Work Section UI and Animation
+
+### Version 1.0.0 : 240122
+
+- PC Version Complete
