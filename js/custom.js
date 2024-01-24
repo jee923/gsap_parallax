@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
-  function headerAnimationWithScroll() {
+  function headerAnimationWithScroll(imgX) {
     // 화면 스크롤 시 애니메이션 효과
     gsap.to(".title_paralax", {
       scrollTrigger: commonScrollTrigger.header,
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.to(".header__img", {
       scrollTrigger: commonScrollTrigger.header,
-      xPercent: -70,
+      xPercent: imgX,
     });
 
     gsap.to(".header__img img", {
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
       rotate: -720,
     });
   }
-  headerAnimationWithScroll();
 
   const gsapSquares = gsap.utils.toArray(".section_title_square");
   gsapSquares.forEach((square) => {
@@ -138,10 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
   //   scrub: 1.9,
   // });
 
-  function aboutAnimationWithScroll() {
+  function aboutAnimationWithScroll(imgY, txtY) {
     gsap.from(".about_img", {
       scrollTrigger: commonScrollTrigger.about,
-      yPercent: 80,
+      yPercent: imgY,
     });
     gsap.from(".about_img img", {
       scrollTrigger: commonScrollTrigger.about,
@@ -150,101 +149,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.to(".about_txt", {
       scrollTrigger: commonScrollTrigger.about,
-      yPercent: 50,
+      yPercent: txtY,
     });
   }
-  aboutAnimationWithScroll();
+
+  // Benefits Section Animation Effect
+  function benefits() {
+    // gsap.from(".benefits_num", {
+    //   x: (i, el) => 1 - parseFloat(el.getAttribute("data-speed")), // parseFloat: 소수점 제거
+    //   scrollTrigger: {
+    //     trigger: ".benefits_list",
+    //     start: "top bottom",
+    //     scrub: 1.9,
+    //   },
+    // });
+
+    const benefitsNum = gsap.utils.toArray(".benefits_num");
+    benefitsNum.forEach((num) => {
+      const xMove = gsap.from(num, 3, {
+        x: 1 - parseFloat(num.getAttribute("data-speed")),
+      });
+
+      ScrollTrigger.create({
+        trigger: num, // 애니메이션 대상
+        animation: xMove, // 애니메이션 효과
+        start: "top bottom",
+        scrub: 1.9,
+      });
+    });
+  }
+
+  benefits();
+
+  function worksAnimationWithScroll() {
+    const workAnimationElmts = gsap.utils.toArray(".work-item, .work-item-num");
+    workAnimationElmts.forEach((elmt) => {
+      const yMove = gsap.from(elmt, 3, {
+        y: 1 - parseFloat(elmt.getAttribute("data-speed")),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".work", // 애니메이션 대상
+        animation: yMove, // 애니메이션 효과
+        start: "top bottom",
+        scrub: 1.9,
+      });
+    });
+
+    // image scale effect
+    gsap.from(".work-item-img img", {
+      scale: 1.6,
+      scrollTrigger: {
+        trigger: ".work",
+        start: "top center",
+        scrub: 1.9,
+      },
+    });
+  }
+
+  worksAnimationWithScroll();
+
+  function servAnimationWithScroll() {
+    const servAnimationElmts = gsap.utils.toArray(".serv-item-arrow");
+    servAnimationElmts.forEach((elmt) => {
+      const xMove = gsap.from(elmt, 3, {
+        x: 1 - parseFloat(elmt.getAttribute("data-speed")),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".serv-list", // 애니메이션 대상
+        animation: xMove, // 애니메이션 효과
+        start: "top bottom",
+        scrub: 1.9,
+      });
+    });
+  }
+
+  servAnimationWithScroll();
+
+  function footerAnimationWithScroll() {
+    const footerAnimationElmts = gsap.utils.toArray(".footer-wrapper span");
+    footerAnimationElmts.forEach((elmt) => {
+      const yMove = gsap.from(elmt, 3, {
+        y: 1 - parseFloat(elmt.getAttribute("data-speed")),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".footer", // 애니메이션 대상
+        animation: yMove, // 애니메이션 효과
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: 1.9,
+      });
+    });
+  }
+
+  footerAnimationWithScroll();
+
+  if (window.innerWidth > 980) {
+    headerAnimationWithScroll(-70);
+    aboutAnimationWithScroll(80, 50);
+  } else if (window.innerWidth <= 980) {
+    headerAnimationWithScroll(0);
+    aboutAnimationWithScroll(0, 30);
+  }
 }); // end of DOM Content Loaded Method
-
-// Benefits Section Animation Effect
-function benefits() {
-  // gsap.from(".benefits_num", {
-  //   x: (i, el) => 1 - parseFloat(el.getAttribute("data-speed")), // parseFloat: 소수점 제거
-  //   scrollTrigger: {
-  //     trigger: ".benefits_list",
-  //     start: "top bottom",
-  //     scrub: 1.9,
-  //   },
-  // });
-
-  const benefitsNum = gsap.utils.toArray(".benefits_num");
-  benefitsNum.forEach((num) => {
-    const xMove = gsap.from(num, 3, {
-      x: 1 - parseFloat(num.getAttribute("data-speed")),
-    });
-
-    ScrollTrigger.create({
-      trigger: num, // 애니메이션 대상
-      animation: xMove, // 애니메이션 효과
-      start: "top bottom",
-      scrub: 1.9,
-    });
-  });
-}
-
-benefits();
-
-function worksAnimationWithScroll() {
-  const workAnimationElmts = gsap.utils.toArray(".work-item, .work-item-num");
-  workAnimationElmts.forEach((elmt) => {
-    const yMove = gsap.from(elmt, 3, {
-      y: 1 - parseFloat(elmt.getAttribute("data-speed")),
-    });
-
-    ScrollTrigger.create({
-      trigger: ".work", // 애니메이션 대상
-      animation: yMove, // 애니메이션 효과
-      start: "top bottom",
-      scrub: 1.9,
-    });
-  });
-
-  // image scale effect
-  gsap.from(".work-item-img img", {
-    scale: 1.6,
-    scrollTrigger: {
-      trigger: ".work",
-      start: "top center",
-      scrub: 1.9,
-    },
-  });
-}
-
-worksAnimationWithScroll();
-
-function servAnimationWithScroll() {
-  const servAnimationElmts = gsap.utils.toArray(".serv-item-arrow");
-  servAnimationElmts.forEach((elmt) => {
-    const xMove = gsap.from(elmt, 3, {
-      x: 1 - parseFloat(elmt.getAttribute("data-speed")),
-    });
-
-    ScrollTrigger.create({
-      trigger: ".serv-list", // 애니메이션 대상
-      animation: xMove, // 애니메이션 효과
-      start: "top bottom",
-      scrub: 1.9,
-    });
-  });
-}
-
-servAnimationWithScroll();
-
-function footerAnimationWithScroll() {
-  const footerAnimationElmts = gsap.utils.toArray(".footer-wrapper span");
-  footerAnimationElmts.forEach((elmt) => {
-    const yMove = gsap.from(elmt, 3, {
-      y: 1 - parseFloat(elmt.getAttribute("data-speed")),
-    });
-
-    ScrollTrigger.create({
-      trigger: ".footer", // 애니메이션 대상
-      animation: yMove, // 애니메이션 효과
-      start: "top bottom",
-      end: "bottom bottom",
-      scrub: 1.9,
-    });
-  });
-}
-
-footerAnimationWithScroll();

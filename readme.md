@@ -20,3 +20,7 @@
 ### Version 1.0.0 : 240122
 
 - PC Version Complete
+
+### Version 1.0.1 : 240124
+
+- Responsive Web 980, 786
