@@ -23,4 +23,8 @@
 
 ### Version 1.0.1 : 240124
 
-- Responsive Web 980, 786
+- Responsive Web 980 Complete
+
+### Version 1.0.2 : 240129
+
+- Responsive Web 786 Complete

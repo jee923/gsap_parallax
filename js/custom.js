@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
     header: {
       // 효과 X, 컨트롤러 등록(요소, 시작점, 끝나는점, 스크롤 동기화 여부 등을 적는 것)
       trigger: ".header", // 애니메이션 시작점과 끝나는 지점의 기준
-      start: "top top", // 첫번째: 요소의 시작 위치, 두번째 : 화면의 시작 위치
-      scrub: 1.8, // 스크롤 동기화 여부, true : 스크롤 타이밍에 맞춰 애니메이션 실행, 시간 적용 시 지정된 시간만큼 지연 후 애니메이션 실행
+      start: "top top", // 첫번째: 요소의 시작 위치, 두번째: 화면의 시작 위치
+      scrub: 1.8, // 스크롤 동기화 여부, true: 스크롤 타이밍에 맞춰 애니메이션 실행, 시간 적용 시 지정된 시간만큼 지연 후 애니메이션 실행
     },
     about: {
       trigger: ".about",
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function headerAnimationWithScroll(imgX) {
     // 화면 스크롤 시 애니메이션 효과
-    gsap.to(".title_paralax", {
+    gsap.to(".title_parallax", {
       scrollTrigger: commonScrollTrigger.header,
       // scrollTrigger : {
       //   trigger: ".header", // 애니메이션 시작점과 끝나는 지점의 기준
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.to(".header__img", {
       scrollTrigger: commonScrollTrigger.header,
-      xPercent: imgX,
+      xPercent: imgX, // 파라미터 값
     });
 
     gsap.to(".header__img img", {
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // image scale effect
+    // Image Scale Effect
     gsap.from(".work-item-img img", {
       scale: 1.6,
       scrollTrigger: {

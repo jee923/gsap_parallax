@@ -44,4 +44,58 @@
   .title {
     font-size: 35px;
   }
+
+  .benefits .benefits_list {
+    gap: 0;
+  }
+
+  .benefits .benefits_item {
+    width: 50%;
+    padding: 25px;
+  }
+
+  .benefits_num {
+    font-size: 45px;
+  }
+
+  .benefits_p {
+    font-size: 16px;
+  }
+
+  .work {
+    padding-top: 120px;
+  }
+
+  .work-wrap {
+    gap: 60px;
+  }
+
+  .work-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .work-item-num {
+    font-size: 50px;
+  }
+
+  .serv-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .serv-item .serv-item-arrow {
+    position: relative;
+    left: 300px;
+  }
+
+  .serv-item .serv-item-text {
+    font-size: 35px;
+  }
+
+  .footer-wrapper {
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 12px;
+  }
 }

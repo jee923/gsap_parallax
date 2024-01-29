@@ -59,7 +59,7 @@ section {
   z-index: 2;
 }
 
-.title_paralax {
+.title_parallax {
   display: inline-block;
   will-change: transform;
 }
@@ -224,9 +224,6 @@ section {
 .section_title.text-center {
   text-align: center;
 }
-/* .benefits .section_title {
-  text-align: center;
-} */
 
 .benefits .benefits_list {
   display: flex;
@@ -242,14 +239,14 @@ section {
 }
 
 .benefits_num {
-  font-size: 3.75rem;
+  font-size: 60px;
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 1px var(--pr-color);
 }
 
 .benefits_p {
-  font-size: 1.25rem;
+  font-size: 20px;
   color: #4b4b4b;
 }
 
@@ -311,7 +308,7 @@ section {
   width: 55px;
   height: 55px;
   top: 50%;
-  transform: trnaslateY(-50%);
+  transform: translateY(-50%);
   right: 0;
 }
 
@@ -344,12 +341,4 @@ section {
 
 .footer-wrapper span {
   display: inline-block;
-}
-
-/* Hollow */
-
-.hollow {
-  width: 100%;
-  height: 100vh;
-  background: #ff8833;
 }
